@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Display Items </title>
+<script type="text/javascript">
+var hello;
+var hello1;
+var hello2;
+var h;
+var g;
+var count=0;
+$('#hhe').click(function() {
+	$('#he').animate( {
+	left: '-50',
+	}, 5000, function() {
+	
+	});
+	$('#he1').animate( { 
+	left: '-50',
+	},5000,function() {
+	});
+	});
+var sli1=function slide1(count++)
+{
+if(count == 3)
+{
+count =0;
+h.style.left=0+'px';
+}
+if(count == 1)
+{
+while(!parseInt(g.style.left)==0)
+{
+h=document.getElementById("he");
+h.style.left=parseInt(h.style.left)-5+'px';
+g=document.getElementById("he1");
+g.style.left=parseInt(g.style.left)-5+'px';
+}
+}
+if(count==3
+h.src="images/lap.jpg";
+document.getElementById("he1");
+
+g.style.top=+2px
+}
+function init()
+{
+}
+
+setInterval(function() { doMove()},1000); //css
+window.onload=hell;
+</script>
+<style>
+</style>
+</head>
+<body>
+<?php if($count==3) { $count=1; }?> 
+<img id="control1" style="display:inline; top:104.5px; left:5px;" src="images/left.jpg" onclick="slide();";/>
+<div id="main" style="height:210px; width:727px; overflow:hidden"> 
+
+<img id="he" src="images/lap.jpg"/>
+<img id="he1" src="images/cam.jpg" /> 
+<img id="he2" src="images/gal.jpg" />
+
+</div>
+<img id="control" style="display:inline; top:104.5px;left:5px;" src="images/right.jpg" onclick="slide1();" />
+
+
+</body>
+</html>
+
