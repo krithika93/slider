@@ -32,6 +32,7 @@ var one=null;
 var two=null;
 var three=null;
 var four=null;
+var five=null;//global variables
 function move4()
 {
 one=document.getElementById("h");
@@ -46,9 +47,10 @@ var a=parseInt(one.style.right);
 var b=parseInt(two.style.right);
 var c=parseInt(three.style.right);
 five.style.z-index=4;
-four.style.z-index=3;
+four.style.z-index=4;
+three.style.z-index=1;
 two.style.z-index=2;
-one.style.z-index=1;
+one.style.z-index=3;
 function move()
 {
 two.style.float="right";
@@ -56,6 +58,8 @@ two.style.left="auto";//is it necesary and the order too and can it be outside t
 three.style.float="right";
 three.style.left="auto";
 two.style.right='590px';
+one.style.right='0px';
+one.style.left="auto";
 }
 move();
 }
@@ -73,16 +77,62 @@ var a=parseInt(one.style.right);
 var b=parseInt(two.style.right);
 var c=parseInt(three.style.right);
 five.style.z-index=4;
-four.style.z-index=3;
-two.style.z-index=2;
-one.style.z-index=1;
+four.style.z-index=4;
+three.style.z-index=1;
+two.style.z-index=3;//higher z-index value for two now 
+one.style.z-index=2;
 function move()
 {
-three.style.float="right";
-three.style.right='0px';
+two.style.float="right";
+two.style.left="auto";
+two.style.right='0px';
 
 }
 move();
+}
+function move6();
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+four=document.getElementById("left");
+five=document.getElementById("right");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+
+var a=parseInt(one.style.left);
+var b=parseInt(two.style.left);
+var c=parseInt(three.style.left);
+
+//function first()
+//{
+//five.style.z-index=4;
+//four.style.z-index=4;
+//three.style.z-index=3;
+//two.style.z-index=2;
+//one.style.z-index=1;
+//} 
+function bb() //back to original calling a function inside another function, for movements smooth than affect the global namespace, and implement
+{
+one.style.z-index=3;
+two.style.z-index=2;//changing z -index
+three.style.z-index=1
+one.style.left="auto";
+one.style.right='590px';
+one.style.float="right";
+two.style.float="right";
+two.style.right="auto";
+two.style.z-index:2;
+three.style.z-index:1;//note it here
+two.style.right='590px';
+two.style.float="right";
+three.style.float="right";
+three.style.left="auto";
+one.style.float="left";
+}
+bb();
+
 }
 function move1()
 {
@@ -103,8 +153,10 @@ two.style.z-index=2;
 one.style.z-index=1;
 function move()
 {
+two.style.right="auto";//single or double codes
 two.style.left='0px';
 three.style.float="left";
+three.style.right="auto";
 }
 move();
 }
@@ -129,6 +181,7 @@ two.style.z-index=2;
 one.style.z-index=1;
 function move()
 {
+three.style.right="auto";
 three.style.left='0px';
 }
 move();
@@ -158,19 +211,24 @@ var c=parseInt(three.style.left);
 //} 
 function bb() //back to original calling a function inside another function, for movements smooth than affect the global namespace, and implement
 {
-three.style.z-index:3;
-two.style.z-index:2;
-one.style.z-index:1
+three.style.z-index=3;
+two.style.z-index=2;
+one.style.z-index=1;
+three.style.right="auto";
 three.style.left='590px';
 three.style.float="left";
+two.style.right="auto";
 two.style.float="left";
+one.style.right="auto";
 one.style.float:"left";
 two.style.z-index:2;
 one.style.z-index:1;
 two.style.left='590px';
 two.style.float="left";
 three.style.float="left";
+one.style.right="auto";
 one.style.float="left";
+one.style.right='0px';
 }
 bb();
 
@@ -191,7 +249,7 @@ if(a == 0)
 //one.style.left=a+'px';
 //two.style.left=b+'px';
 //three.style.left=c+'px';
-var do=bb1();
+var do=move6();//how to retain the values between the call backs
 do();
 }
 else if(b == 0)
@@ -225,7 +283,7 @@ if(c==0)
 //two.style.left=b+'px';
 //three.style.left=c+'px';
 var do=move3();
-do();
+do();//closures needed
 }
 else if(b == 0)
 {
