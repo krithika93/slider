@@ -8,16 +8,22 @@
 {
 transition:left 2s;
 -webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
 }
 #hh
 {
 transition:left 2s;
 -webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
 }
 #hhh
 {
 transition:left 2s;
 -webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
 }
 
 </style>
@@ -26,6 +32,58 @@ var one=null;
 var two=null;
 var three=null;
 var four=null;
+function move4()
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+four=document.getElementById("left");
+five=document.getElementById("right");
+var a=parseInt(one.style.right);
+var b=parseInt(two.style.right);
+var c=parseInt(three.style.right);
+five.style.z-index=4;
+four.style.z-index=3;
+two.style.z-index=2;
+one.style.z-index=1;
+function move()
+{
+two.style.float="right";
+two.style.left="auto";//is it necesary and the order too and can it be outside the functions?
+three.style.float="right";
+three.style.left="auto";
+two.style.right='590px';
+}
+move();
+}
+function move5()
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+four=document.getElementById("left");
+five=document.getElementById("right");
+var a=parseInt(one.style.right);
+var b=parseInt(two.style.right);
+var c=parseInt(three.style.right);
+five.style.z-index=4;
+four.style.z-index=3;
+two.style.z-index=2;
+one.style.z-index=1;
+function move()
+{
+three.style.float="right";
+three.style.right='0px';
+
+}
+move();
+}
 function move1()
 {
 one=document.getElementById("h");
@@ -117,18 +175,40 @@ one.style.float="left";
 bb();
 
 }
-
-
-
-
-
-
-
-
-
-
-
 function right()
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+var a=parseInt(one.style.right);
+var b=parseInt(two.style.right);
+var c=parseInt(three.style.right);
+if(a == 0)
+{
+//one.style.left=a+'px';
+//two.style.left=b+'px';
+//three.style.left=c+'px';
+var do=bb1();
+do();
+}
+else if(b == 0)
+{
+var do=move4();
+do();
+
+
+}
+else
+{
+//setTimeout(function() { move1(); });
+var do=move5();
+do();
+}
+}
+function left()
 {
 one=document.getElementById("h");
 two=document.getElementById("hh");
@@ -141,10 +221,11 @@ var b=parseInt(two.style.left);
 var c=parseInt(three.style.left);
 if(c==0)
 {
-one.style.left=a+'px';
-two.style.left=b+'px';
-three.style.left=c+'px';
-
+//one.style.left=a+'px';
+//two.style.left=b+'px';
+//three.style.left=c+'px';
+var do=move3();
+do();
 }
 else if(b == 0)
 {
@@ -159,11 +240,6 @@ else
 var do=move1();
 do();
 }
-
-
-
-
-
 }
 </script>    
 </head>
@@ -172,7 +248,7 @@ do();
     <div id="good" >
      
     <div id="hello" style=" width:575px; height:323px; position:relative;" >
-       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="init();">
+       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="left();">
         <img src="Image/left.png" alt="left" style=" height:61px; width:67px;"
              /></div>
 
@@ -189,7 +265,7 @@ do();
 
    
     </div>
-    <div id="h2" style="z-index:2;left:400px;top:60px; position:absolute;">
+    <div id="h2" style="z-index:2;left:400px;top:60px; position:absolute;" onclick="right();">
      <img src="Image/right.png" alt="right" style="height:61px; width:67px;" />
      </div>
     </div>
