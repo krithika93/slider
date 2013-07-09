@@ -239,20 +239,20 @@ if(a == 0)
 //one.style.left=a+'px';
 //two.style.left=b+'px';
 //three.style.left=c+'px';
-move6();//how to retain the values between the call backs
-
+//move6();//how to retain the values between the call backs
+setTimeout(function () { move6(); } );
 }
 else if(b == 0)
 {
-move4();
-
+//move4();
+setTimeout(function () { move4(); } );
 
 
 }
 else
 {
-//setTimeout(function() { move1(); });
-move5();
+setTimeout(function() { move5(); });
+//move5();
 
 }
 }
@@ -272,20 +272,23 @@ if(c==0)
 //one.style.left=a+'px';
 //two.style.left=b+'px';
 //three.style.left=c+'px';
-move3();
+
+setTimeout(function () { move3(); } );
+//move3();
 //closures needed
 }
 else if(b == 0)
 {
-move2();
+setTimeout(function () { move2(); } );
+//move2();
 
 
 
 }
 else
 {
-//setTimeout(function() { move1(); });
-move1();
+setTimeout(function() { move1(); });
+//move1();
 
 }
 }
@@ -296,7 +299,7 @@ move1();
     <div id="good" >
      
     <div id="hello" style=" width:575px; height:323px; position:relative; margin-left:300px;margin-right:300px;overflow:hidden;" >
-       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;"onclick="left();">
+       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="left();">
         <img src="Image/left.png" alt="left" style=" height:61px; width:67px;"
              /></div>
 
@@ -311,7 +314,7 @@ move1();
      </div>
    
     </div>
-    <div id="h2" style="z-index:2;left:500px;top:160px; position:absolute;" onclick="right();">
+    <div id="h2" style="z-index:2;left:500px;top:160px; position:absolute;" onclick="right();" >
      <img src="Image/right.png" alt="right" style="height:61px; width:67px;" />
      </div>
     </div>
