@@ -56,7 +56,7 @@ two.style.left="auto";//is it necesary and the order too and can it be outside t
 three.style.float="right";
 three.style.left="auto";
 two.style.right=parseInt(two.style.right)+590+'px';
-one.style.right=parseInt('0px';
+one.style.right=parseInt(one.style.right)+'px';//'0px';
 one.style.left="auto";
 }
 
@@ -234,24 +234,24 @@ three.style.position="relative";
 var a=parseInt(one.style.right);
 var b=parseInt(two.style.right);
 var c=parseInt(three.style.right);
-if(a == 0)
+if(a == 0)//both cond a and b
 {
 //one.style.left=a+'px';
 //two.style.left=b+'px';
 //three.style.left=c+'px';
 //move6();//how to retain the values between the call backs
-setTimeout(function () { move6(); } );
+setTimeout(function () { move6(); },2000 );
 }
 else if(b == 0)
 {
 //move4();
-setTimeout(function () { move4(); } );
+setTimeout(function () { move4(); },2000 );
 
 
 }
 else
 {
-setTimeout(function() { move5(); });
+setTimeout(function() { move5(); },2000);
 //move5();
 
 }
@@ -273,13 +273,13 @@ if(c==0)
 //two.style.left=b+'px';
 //three.style.left=c+'px';
 
-setTimeout(function () { move3(); } );
+setTimeout(function () { move3(); },2000 );
 //move3();
 //closures needed
 }
 else if(b == 0)
 {
-setTimeout(function () { move2(); } );
+setTimeout(function () { move2(); } ,2000 );
 //move2();
 
 
@@ -287,7 +287,7 @@ setTimeout(function () { move2(); } );
 }
 else
 {
-setTimeout(function() { move1(); });
+setTimeout(function() { move1(); },2000);
 //move1();
 
 }
