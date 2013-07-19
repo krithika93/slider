@@ -33,19 +33,18 @@ var two=null;
 var three=null;
 var four=null;
 var five=null;//global variables
-function move4()
-{
 one=document.getElementById("h");
 two=document.getElementById("hh");
 three=document.getElementById("hhh");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
 four=document.getElementById("left");
-five=document.getElementById("right");
-var a=parseInt(one.style.right);
-var b=parseInt(two.style.right);
-var c=parseInt(three.style.right);
+five=document.getElementById("right");//inline declarations are not permitted
+
+
+//var a=parseInt(one.style.left);
+//var b=parseInt(two.style.left);
+//var c=parseInt(three.style.left);
+function move4()
+{
 five.style.z-index=4;
 four.style.z-index=4;
 three.style.z-index=1;
@@ -55,54 +54,46 @@ two.style.float="right";
 two.style.left="auto";//is it necesary and the order too and can it be outside the functions?
 three.style.float="right";
 three.style.left="auto";
-two.style.right=parseInt(two.style.right)+590+'px';
-one.style.right=parseInt(one.style.right)+'px';//'0px';
+
+two.style.right=parseInt(two.style.right)+59+'px';
+if(parseInt(two.style.right) == 590)
+{
+clearInterval(glo4);
+}
+
+//one.style.right=parseInt(one.style.right)+'px';//'0px';
+one.style.float="right";
 one.style.left="auto";
 }
 
 
 function move5()
 {
-one=document.getElementById("h");
-two=document.getElementById("hh");
-three=document.getElementById("hhh");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
-four=document.getElementById("left");
-five=document.getElementById("right");
-var a=parseInt(one.style.right);
-var b=parseInt(two.style.right);
-var c=parseInt(three.style.right);
 five.style.z-index=4;
 four.style.z-index=4;
 three.style.z-index=2;
 two.style.z-index=3;//higher z-index value for two now
 one.style.z-index=1;
-
-
+one.style.float="right";
+one.style.right='0px';
+one.style.left="auto";//change three here
 two.style.float="right";
+two.style.right='0px';// change the others div accordingly 
 two.style.left="auto";
-two.style.right='0px';
+three.style.float="right";
+three.style.left="auto";
+three.style.right='0px';
 
 
-
+three.style.right=parseInt(two.style.right)+59+'px';
+//two.style.right='0px';//position absolute only when movement is needed ///
+if(parseInt(two.style.right) == 0)
+{
+clearInterval(glo5);
+}
 }
 function move6();
 {
-one=document.getElementById("h");
-two=document.getElementById("hh");
-three=document.getElementById("hhh");
-four=document.getElementById("left");
-five=document.getElementById("right");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
-
-var a=parseInt(one.style.left);
-var b=parseInt(two.style.left);
-var c=parseInt(three.style.left);
-
 //function first()
 //{
 //five.style.z-index=4;
@@ -112,85 +103,67 @@ var c=parseInt(three.style.left);
 //one.style.z-index=1;
 //}
  //back to original calling a function inside another function, for movements smooth than affect the global namespace, and implement
+//one.style.z-index=3;
+//two.style.z-index=2;//changing z -index
+//three.style.z-index=1
+//one.style.left="auto";
+//one.style.right='590px';
+//one.style.float="right";
+//two.style.float="right";
+//two.style.right="auto";
+//two.style.z-index:2;
+//three.style.z-index:1;//note it here
+four.style.visibility="hidden";//then appear
 
-one.style.z-index=3;
-two.style.z-index=2;//changing z -index
-three.style.z-index=1
-one.style.left="auto";
-one.style.right='590px';
-one.style.float="right";
-two.style.float="right";
-two.style.right="auto";
-two.style.z-index:2;
-three.style.z-index:1;//note it here
-two.style.right='590px';
-two.style.float="right";
-three.style.float="right";
-three.style.left="auto";
-one.style.float="left";
+//two.style.right='590px';
+//two.style.float="right";
+//three.style.float="right";
+//three.style.left="auto";
+//one.style.float="left";
 
 }
 function move1()
 {
-one=document.getElementById("h");
-two=document.getElementById("hh");
-three=document.getElementById("hhh");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
-four=document.getElementById("left");//all properties too global
-five=document.getElementById("right");
-var a=parseInt(one.style.left);
-var b=parseInt(two.style.left);
-var c=parseInt(three.style.left);
+//all properties too global
 five.style.z-index=4;
 four.style.z-index=3;
 two.style.z-index=2;
 one.style.z-index=1;
 two.style.right="auto";//single or double codes
-two.style.left='0px';
-three.style.float="left";
 three.style.right="auto";
+three.style.float="left";// before or after//auto comes before or after
+two.style.left= (parseInt(three.style.left)- 59) +'px';
+if(parseInt(two.style.left) == 0)
+{
+
+	clearInterval(glo1);
+
+}
+//two.style.left='0px';
+two.style.float="left";//before or now
+
 
 }
 function move2();
 {
-one=document.getElementById("h");
-two=document.getElementById("hh");
-three=document.getElementById("hhh");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
-four=document.getElementById("left");
-five=document.getElementById("right");
-
-var a=parseInt(one.style.left);
-var b=parseInt(two.style.left);
-var c=parseInt(three.style.left);
+//two style left is 
 four.style.z-index:4;
 five.style.z-index:4;
 three.style.z-index=3;//minimum value of z -index
 two.style.z-index=2;
 one.style.z-index=1;
 three.style.right="auto";
-three.style.left='0px';
+three.style.float="left";
+three.style.left = (parseInt(three.style.left)- 59) +'px';
+if(parseInt(three.style.left) == 0)//or null
+{
+	clearInterval(glo2);
+}
 
 
 }
 function move3();
 {
-one=document.getElementById("h");
-two=document.getElementById("hh");
-three=document.getElementById("hhh");
-four=document.getElementById("left");
-five=document.getElementById("right");
-one.style.position="relative";
-two.style.position="relative";
-three.style.position="relative";
-
-var a=parseInt(one.style.left);
-var b=parseInt(two.style.left);
-var c=parseInt(three.style.left);
 
 //function first()
 //{
@@ -201,26 +174,17 @@ var c=parseInt(three.style.left);
 //one.style.z-index=1;
 //}
  //back to original calling a function inside another function, for movements smooth than affect the global namespace, and implement
+five.style.visibility="hidden";
 
-three.style.z-index=3;
-two.style.z-index=2;
-one.style.z-index=1;
-three.style.right="auto";
-three.style.left='590px';
-three.style.float="left";
-two.style.right="auto";
-two.style.float="left";
-one.style.right="auto";
-one.style.float:"left";
-two.style.z-index:2;
-one.style.z-index:1;
-two.style.left='590px';
-two.style.float="left";
-three.style.float="left";
-one.style.right="auto";
-one.style.float="left";
-one.style.left='0px';
 
+//two.style.left='590px';
+//two.style.float="left";
+//three.style.float="left";
+//one.style.right="auto";
+//one.style.float="left";
+//one.style.left='0px';
+//three.style.right="auto";
+//three.style.left='590px';// z-index change  order it accordingly left, first or auto first
 
 }
 function right()
@@ -273,6 +237,17 @@ if(c==0)
 //two.style.left=b+'px';
 //three.style.left=c+'px';
 
+three.style.z-index=3;
+two.style.z-index=2;
+one.style.z-index=1;
+
+three.style.float="left";
+two.style.right="auto";
+two.style.float="left";
+one.style.right="auto";
+one.style.float:"left";
+two.style.z-index:2;
+one.style.z-index:1;
 setTimeout(function () { move3(); },2000 );
 //move3();
 //closures needed
@@ -299,7 +274,7 @@ setTimeout(function() { move1(); },2000);
     <div id="good" >
      
     <div id="hello" style=" width:575px; height:323px; position:relative; margin-left:300px;margin-right:300px;overflow:hidden;" >
-       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="left();">
+       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="right();">
         <img src="Image/left.png" alt="left" style=" height:61px; width:67px;"
              /></div>
 
@@ -314,7 +289,7 @@ setTimeout(function() { move1(); },2000);
      </div>
    
     </div>
-    <div id="h2" style="z-index:2;left:500px;top:160px; position:absolute;" onclick="right();" >
+    <div id="h2" style="z-index:2;left:500px;top:160px; position:absolute;" onclick="left();" >
      <img src="Image/right.png" alt="right" style="height:61px; width:67px;" />
      </div>
     </div>

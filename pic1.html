@@ -1,0 +1,222 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Slider</title>
+<style>
+#h
+{
+transition:left 2s;
+-webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
+}
+#hh
+{
+transition:left 2s;
+-webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
+}
+#hhh
+{
+transition:left 2s;
+-webkit-transition:left 2s;
+transition:right 2s;
+-webkit-transition:right 2s;
+}
+
+</style>
+<script>
+var one=null;
+var two=null;
+var three=null;
+var four=null;
+var five=null;//global variables
+var glo1,glo2,glo4,glo5;
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+four=document.getElementById("left");
+five=document.getElementById("right");
+
+function move4()
+{
+two.style.left="auto";
+two.style.right=parseInt(two.style.right)+59+'px';
+one.style.left="auto";
+if(parseInt(two.style.right) == 590)
+{
+clearInterval(glo4);
+}
+
+
+}
+
+
+function move5()
+{
+//one.style.left="auto";
+//two.style.left="auto";
+three.style.right="0px";
+//two.style.right
+three.style.right=parseInt(three.style.right)+59+'px';
+three.style.left="auto";// auto is necessary now..
+if(parseInt(three.style.right) == 590)
+{
+clearInterval(glo5);
+}
+}
+function move6();
+{
+
+four.style.visibility="hidden";
+}
+function move1()
+{
+//one.style.right="auto";
+//three.style.right="auto";
+two.style.left= parseInt(three.style.left)- 59 +'px';
+two.style.right="auto";
+one.style.right="auto";
+if(parseInt(two.style.left) == 0)
+{
+
+	clearInterval(glo1);
+
+}
+}
+function move2();
+{
+three.style.left = parseInt(three.style.left)- 59 +'px';
+three.style.right="auto";
+if(parseInt(three.style.left) == 0)
+{
+	clearInterval(glo2);
+}
+
+
+}
+function move3();
+{
+five.style.visibility="hidden";
+}
+function right()
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+var a=parseInt(one.style.right);
+var b=parseInt(two.style.right);
+var c=parseInt(three.style.right);
+if(a == 0)
+{
+five.style.z-index=2;
+four.style.z-index=1;
+one.style.float="right";
+two.style.float="right";
+three.style.float="right";
+setTimeout(function () { move6(); },2000 );
+}
+else if(b == 0)
+{
+five.style.z-index=2;
+four.style.z-index=1;
+two.style.float="right";
+three.style.float="right";
+two.style.position="relative";
+one.style.float="right";
+
+setInterval(function () { move4(); },2000 );
+
+
+}
+else
+{
+five.style.z-index=2;
+four.style.z-index=1;
+one.style.float="right";
+two.style.float="right";
+three.style.float="right";
+three.style.position="relative";
+setInterval(function() { move5(); },2000);
+
+
+}
+}
+function left()
+{
+one=document.getElementById("h");
+two=document.getElementById("hh");
+three=document.getElementById("hhh");
+one.style.position="relative";
+two.style.position="relative";
+three.style.position="relative";
+var a=parseInt(one.style.left);
+var b=parseInt(two.style.left);
+var c=parseInt(three.style.left);
+if(c==0)
+{
+five.style.z-index=1;
+four.style.z-index=2;
+one.style.float="left";
+two.style.float="left";
+three.style.float="left";
+setTimeout(function () { move3(); },2000 );
+}
+else if(b == 0)
+{
+one.style.float="left";
+two.style.float="left";
+three.style.float="left";
+setInterval(function () { move2(); } ,2000 );
+}
+else
+{
+setInterval(function() { move1(); },2000);
+}
+}
+</script>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div id="good" >
+     
+    <div id="hello" style=" width:575px; height:323px; position:relative; margin-left:300px;margin-right:300px;overflow:hidden;" >
+       <div id="h1" style="z-index:2;left:10px;top:160px; position:absolute;" onclick="right();">
+        <img src="Image/left.png" alt="left" style=" height:61px; width:67px;"
+             /></div>
+
+
+    <div id="h" style="float:left; z-index:1; left:0px;top:0px;right:auto; position:absolute;" >
+        <img src="Image/1.jpg" alt="image1"/>
+    </div>
+    <div id="hh" style="float:left; z-index:1; left:590px;top:0px;right:auto;position:absolute; " >
+    <img src="Image/2.jpg" alt="image2" />
+<div id="hhh" style="float:left; z-index:1; left:590px; top:0px;right:auto;position:absolute;" >
+    <img src="Image/3.jpg" alt="image3" />
+     </div>
+   
+    </div>
+    <div id="h2" style="z-index:2;left:500px;top:160px; position:absolute;" onclick="left();" >
+     <img src="Image/right.png" alt="right" style="height:61px; width:67px;" />
+     </div>
+    </div>
+      </div>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+   
+    </form>
+</body>
+</html>
