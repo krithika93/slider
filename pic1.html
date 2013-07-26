@@ -42,9 +42,9 @@ five=document.getElementById("right");
 
 function move4()
 {
-two.style.left="auto";
-two.style.right=parseInt(two.style.right)+59+'px';
-one.style.left="auto";
+two.style.left="auto"; // first make two style left is auto 
+two.style.right=parseInt(two.style.right)+59+'px'; 
+one.style.left="auto"; // moving two  and one  shows up
 if(parseInt(two.style.right) == 590)
 {
 clearInterval(glo4);
@@ -58,7 +58,8 @@ function move5()
 {
 //one.style.left="auto";
 //two.style.left="auto";
-three.style.right="0px";
+three.style.right="0px";// moving three  and two shows up 
+two.style.left="auto";
 //two.style.right
 three.style.right=parseInt(three.style.right)+59+'px';
 three.style.left="auto";// auto is necessary now..
@@ -76,9 +77,9 @@ function move1()
 {
 //one.style.right="auto";
 //three.style.right="auto";
-two.style.left= parseInt(three.style.left)- 59 +'px';
 two.style.right="auto";
-one.style.right="auto";
+two.style.left= parseInt(two.style.left)- 59 +'px'; //moving one and two appears 
+one.style.right="auto";// two  and one style right  both are auto
 if(parseInt(two.style.left) == 0)
 {
 
@@ -89,8 +90,8 @@ if(parseInt(two.style.left) == 0)
 function move2();
 {
 three.style.left = parseInt(three.style.left)- 59 +'px';
-three.style.right="auto";
-if(parseInt(three.style.left) == 0)
+three.style.right="auto"; //only three style right is auto 
+if(parseInt(three.style.left) == 0)// moving two and three appears 
 {
 	clearInterval(glo2);
 }
